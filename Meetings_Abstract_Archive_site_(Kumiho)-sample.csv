@@ -1,0 +1,501 @@
+﻿Task ID,Created At,Completed At,Last Modified,Name,Section/Column,Assignee,Assignee Email,Start Date,Due Date,Tags,Notes,Projects,Parent task,Blocked By (Dependencies),Blocking (Dependencies),Task Status,Lifecycle Stage,Project Status,APS Department,IS Teams,Task Size (IS) ,Rank Priority (IS)
+"1211435449992353",2025-09-23,2025-09-26,2025-09-26,Project Kickoff,Initiative and Milestones [roadmap level],Miyoung Mary Kim,mkim@aps.org,,2025-08-14,,"Kickoff Agenda:
+    Welcome & Introduction
+    Project overview - purpose, goal, anticipated outcomes
+    Project scope & Objectives
+    Project plan & timeline
+    RACI
+    Communication plan
+    Risk management
+    Q&A
+
+Recording is available: https://app.asana.com/1/36328813574941/task/1210978937397013",Meetings Abstract Archive site (Kumiho),,,,,,,,,,
+"1210952046444354",2025-08-01,2025-09-30,2025-09-30,[Kumiho] Finalize Technical Design and Object Model,Initiative and Milestones [roadmap level],Robert Petersen,rpetersen@aps.org,,2025-09-29,,"Review and finalize the object model described in the design document. Define JSON schema for meeting documents, using flattened representations and copied child objects.
+
+Acceptance Criteria:
+- JSON Schema document written and validated
+- Sample meeting file created and reviewed
+- Internal design review completed
+
+","Web Solutions Team (WEB),IS Delivery & Planning - 2025,Meetings Abstract Archive site (Kumiho)",,"Create JSON Schema Document,Sample Meeting Doc (DAMOP),Internal design review meeting,Review & adjust JSON document",,Done,Complete,Complete,,Web Solutions,,1 - highest priority
+"1210952046444353",2025-08-01,,2025-10-02,[Kumiho Phase2] Finalize Visual Design and URL Format,Initiative and Milestones [roadmap level],,,,,,"Adapt or reuse the current meeting site design for the abstract archive. Define the URL pattern as outlined in the design document (`/[meeting]/[year]/[session code]/[abstract id].html`) and directory structure. Ensure accessibility, minimal CSS, and JavaScript-free rendering.
+
+Acceptance Criteria:
+- Visual design is finalized and approved
+- URL patterns and directory structure documented
+- Accessibility and minimal client-side dependencies confirmed","Web Solutions Team (WEB),IS Delivery & Planning - 2025,Meetings Abstract Archive site (Kumiho)",,"[Kumiho Phase2] Meetings archive site design,[Kumiho] Finalize URL Format",,,Intake,On Track,,Web Solutions,,6
+"1210967580212240",2025-08-05,,2025-08-06,Design review meeting,,,,,,,Review and approve the final design,,[Kumiho Phase2] Finalize Visual Design and URL Format,,,,,,,,,
+"1210952046444363",2025-08-01,,2025-10-09,[Kumiho MVP] Launch Archive Site,Initiative and Milestones [roadmap level],Robert Petersen,rpetersen@aps.org,,2025-12-19,,"Deploy all archived meetings and switch canonical links/redirects from the live sites to the archive.
+
+Acceptance Criteria:
+- Archive live at public URL
+- Canonical link headers present
+- Optional: HTTP 301/302 redirects from old meeting pages","Web Solutions Team (WEB),IS Delivery & Planning - 2025,Meetings Abstract Archive site (Kumiho)",,,,,Implementation,,,Web Solutions,,2
+"1210952046444364",2025-08-01,,2025-10-02,[Kumiho Phase2] Support Post-launch Bug Fixes (Land Phase),Initiative and Milestones [roadmap level],,,,,,"Fix issues discovered during the first 2 weeks after launch. Monitor traffic and logs for errors.
+
+Acceptance Criteria:
+- Bug fixes implemented and deployed
+- No critical errors in logs
+- Post-launch checklist completed","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,Web Solutions,,6
+"1210952046444362",2025-08-01,,2025-10-02,[Kumiho MVP] Conduct Beta/UAT Round,Initiative and Milestones [roadmap level],Chris Coleman,coleman@aps.org,,2025-11-13,,"Deploy a sample of archived meetings to a test environment. Gather feedback from stakeholders and fix defects.
+
+Acceptance Criteria:
+- Test site deployed with sample meetings
+- Stakeholder feedback collected
+
+","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,Planning,,,Web Solutions,,1 - highest priority
+"1211538973770923",2025-10-02,,2025-10-02,Collect Stakeholder feedback,,,,,,,,,[Kumiho MVP] Conduct Beta/UAT Round,,,,,,,,,
+"1210952046444355",2025-08-01,,2025-10-17,[Ongoing] Identify Meetings for Archival,Definition and Planning,Robert Petersen,rpetersen@aps.org,,,,"Create a list of past meetings that are to be archived. Locate and catalog the source data and metadata for each.
+
+Meetings So Far:
+    https://flux.aps.org/meetings/
+    https://aps-archive.doyle-62e.workers.dev/meetings/baps/archives-1994.cfm
+    https://docs.google.com/spreadsheets/d/1LPd0is44ypXVOAwlTzEsDff1ZOIDRW_MdJ3w94gYLE8/edit?gid=0#gid=0
+    https://secure.aps.org/api_open/meeting/?cdlist=MAR,APR,FIAP&list=past
+    https://docs.google.com/spreadsheets/d/1H9JgfbO2dOt0lbRD0WOk3-gTdPUiGR8hbMSyxUGBc4I/edit?gid=789066845#gid=789066845
+    
+
+Acceptance Criteria:
+- List of meetings and data sources compiled
+- Meeting metadata collected and verified
+- Confirmation of data completeness
+
+Note: This is ongoing until this project completes. We won't consider this as a task for now.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,Web Solutions,,
+"1210978937932718",2025-08-05,,2025-09-22,Project Communications,Definition and Planning,Miyoung Mary Kim,mkim@aps.org,,,,"https://docs.google.com/spreadsheets/d/16NJRanf9KMDWStrTPSLbmRkUxAlNhtJac0d9RhqEqIM/edit?gid=668025962#gid=668025962
+
+Organizational examples:
+    https://docs.google.com/spreadsheets/d/1Qt9usygFiCpGlJTeZl_g5rf40VaWI-MrGByoW_9v7VM/edit#gid=1930170185
+    https://docs.google.com/spreadsheets/d/1Tz09R60-fjJ16qE_s5g9YT7YrkDXjaov4xPiF6ePIYs/edit#gid=0
+",Meetings Abstract Archive site (Kumiho),,,,,,,,,,
+"1210978937992036",2025-08-05,,2025-08-05,Project Reporting - email updates,,,,,,,"Process: 
+    Send project updates (whatever frequency) via email
+    Copy project update text into Asana, adding any additional detail (closed tasks/milestones)
+
+
+
+----------------------------------------
+
+One example from JWAP:
+
+Greetings from the JWAP team,
+We're reporting ""on track"" for the first half of September.
+
+Here’s the headline: The scrum team is currently working on implementing the design. 
+    Scrum team: 
+        Brett Glauser, Charles Hammer, Chris Coleman, Fletcher Forehand, Geng Lu, Mat Miehle, Michael Klem, and Michael Papile.
+    Current focus:
+        The team is actively building the new design in a test environment.
+    Next steps:
+        As features progress through acceptance testing, we will share the test site more broadly for feedback and testing.
+        We’ve also added a NearForm senior designer to the team, who will be with us through early December 2024.
+
+The project team continues to meet on Tuesdays at 11:00 AM ET.
+    Our immediate focus will be on reviewing new features as they exit testing. These meetings are also the best place to discuss project communications, gather feedback on the design, and address any project risks.
+    Core project team:
+    Charles Hammer, Chris Moe (CMoe), Larry Grodsky, Jessica Thomas, and Michael Papile.
+
+Please connect with me if you have any questions about this project.
+Best regards,
+Fletcher Forehand
+
+",,Project Communications,,,,,,,,,
+"1210978938061669",2025-08-05,,2025-08-05,Future Press Release - do this toward the beginning of the project,,,,,,,https://www.inc.com/carmine-gallo/jeff-bezos-requires-amazons-leaders-to-perform-this-powerful-ritual-before-launching-anything.html,,Project Communications,,,,,,,,,
+"1211399845807697",2025-09-18,,2025-10-16,[Kumiho] Establish page layout and semantic HTML structure for content,In Review/test,Justin Ryan,justin@aps.org,,2025-10-20,,"The goal of this ticket is to create the initial HTML structure for the archive meeting data. This includes the following:
+    Use environment variable to specify meeting code for each meeting
+    Main page representing top-level meeting information with links to each event for the meeting
+    Dynamic routes for all meeting events
+    Usage of semantic HTML elements and single style sheet for markup.
+
+Markup is based on this schema structure: https://github.com/APSPhysics/kumiho/blob/main/src/schema/index.ts
+
+Source code: https://github.com/APSPhysics/kumiho","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,[Kumiho] Design Astro-based Rendering System,WEB Sprint 15 (10/15-28),Awaiting Testing,,,,Web Solutions,,
+"1211667016635136",2025-10-16,,2025-10-16,Test/Review,,,,,,,,,[Kumiho] Establish page layout and semantic HTML structure for content,,,,,,,,,
+"1211590837597127",2025-10-08,,2025-10-15,[Kumiho] Configure Archive site for Google Scholar indexing,In Progress,Daniel Berger,berger@aps.org,,2025-10-24,,"Our new meeting sites (summit.aps.org, schedule.aps.org, etc.) lack the stable URLs and bibliographic metadata Google Scholar requires. Meanwhile, the scheduler platform is being repurposed under a single path (schedule.aps.org) for all meetings, but its filtering, login, and archival navigation haven’t been fully designed. We need to resolve both indexing and platform-architecture issues before Google Scholar’s July rebuild and before the next meeting cycle.
+
+Goals
+    Expose every APS meeting (past, current, future) via stable, crawlable URLs with complete <meta name=""citation_*""> tags.
+    Design the scheduler platform to support multiple meetings without URL collisions, allow sane filtering/UI for archives, and preserve long-term path consistency.
+    Publish a unified sitemap or “bulletin” archive page to surface legacy content that cannot (or should not) live in the primary scheduler UI.
+
+Crawlability & Sitemaps (Will need to do one or both)
+    Listing page (/listing/): static, auto-updated archive of all past APS meetings with navigation paths exposing all sessions and abstracts. (Path is a proposal.. and for the actual abstract URLs we will need to match the front-end version of the site, since the URL will appear in the search results)
+    Unified sitemap: generate XML covering all current + archived meeting URLs, update with every new meeting.
+
+Other Actions
+    Since the old Google Scholar information was on the epitome website, which is now not avaliable to the public.  We need to setup redirects (308) for all of the abstracts it used to have, which will now be served from the https://meetings.aps.org domain.
+    Flux 
+
+Metadata Implementation
+    Add required Google Scholar tags on every abstract/session page:
+        citation_title
+        citation_conference_title
+        citation_publication_date
+        citation_author (+ institution, email)
+        citation_abstract
+        citation_pdf_url (if available)
+        citation_publisher
+    Evaluate additional conference-specific tags per the Google spec (pp. 7–8).
+
+Target Deadline: June 30, 2025 (to allow time for indexing ahead of July rebuild)
+Meet with Chris: finalize required site functionality (filtering rules, login behavior, path conventions). (Phil & Chris, May 29th meeting)
+
+Next Steps
+    Kick off scoping session (Phil, Chris, Geng, Mat).
+    Document final URL scheme and filtering spec.
+    Implement meta-data on abstract and session pages
+
+Reference
+https://scholar.google.com/intl/en/scholar/inclusion.html#crawl","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,,WEB Sprint 15 (10/15-28),In Progress,,,Meetings,Web Solutions,,
+"1211638635923123",2025-10-14,,2025-10-15,Review PR,,Phillip McNallen,mcnallen@aps.org,,,,,,[Kumiho] Configure Archive site for Google Scholar indexing,,,,,,,,,
+"1210987095059624",2025-08-06,,2025-10-14,[Kumiho Phase2] Meetings archive site design,Implementation Tasks,,,,,,"Create a visual design for archival site.
+
+AC
+    Design a Meeting Page presenting the following data:
+        start and end date
+        location
+        description
+        list of events/sessions
+    Design a Session Page presenting the following data
+        link to parent meeting
+        Title
+        Description
+        Event Chair
+        Topics
+        Sponsoring Units
+        Location/Room
+        list of abstracts/presentations/posters
+    Design an abstract Page presenting the following data
+        Link to parent session/event
+        Title
+        is invited
+        is withdrawn
+        Submitter
+        Authors
+
+The object model is documented in this doc
+https://docs.google.com/document/d/1mPzyIrjQ5k3U35g-HZMyFYRUFF7mhwlr3ZBVvF2RYQ0/edit?usp=sharing","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho),Meetings UX Design (2025/26)",,,[Kumiho Phase2] Finalize Visual Design and URL Format,Evaluating,,,,"Experience Design, Web Solutions",,
+"1210952046444360",2025-08-01,,2025-10-16,[Kumiho MVP] Write Import Scripts,Implementation Tasks,Mike DiGioia,mdigioia@aps.org,,2025-10-27,,"Create JSON import templates and tooling to convert existing data into archive-ready format. Include validation tooling.
+
+Acceptance Criteria:
+- JSON templates and test data files created
+- Validation script/tool runs successfully
+- Conversion from legacy formats tested on ≥1 meeting","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,[Kumiho] Design Astro-based Rendering System,WEB Sprint 15 (10/15-28),Ready / Needs Resource,,,,Web Solutions,3 - L (< 3 days),1 - highest priority
+"1210467498202487",2025-06-04,,2025-10-14,[Kumiho Phase2] Google Scholar: Scrape flux.aps.org meetings for future database ingestion,Implementation Tasks,Robert Petersen,rpetersen@aps.org,,,,"    Good candidate for llm work
+    Scrape → database/json → future static site w/proper Google Scholar metadata
+    need to confirm there's a way to contact google Scholar about pages that will change paths 
+","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,Web Solutions,,
+"1211534951927002",2025-10-02,,2025-10-02,[Kumiho Phase2] Sitemap,Implementation Tasks,,,,,,"The Kumiho site needs to have a sitemap that lists all site paths
+
+    https://www.sitemaps.org/
+    https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap
+    https://docs.astro.build/en/guides/integrations-guide/sitemap/
+
+Acceptance criteria
+    All page paths in the archive site are listed in the sitemap
+    New page paths are added when new meetings are added
+",Meetings Abstract Archive site (Kumiho),,,,,,,,,,4
+"1211534951927006",2025-10-02,,2025-10-03,[Kumiho Phase2] robots.txt,Implementation Tasks,,,,,,"    https://www.robotstxt.org/
+
+Basic robots.txt file — sitemap must be a full URL, not relative path
+
+Are there any other rules that should be included?
+
+User-agent: *
+Allow: /
+sitemap: https://www.site.com/sitemap.xml
+",Meetings Abstract Archive site (Kumiho),,,,,,,,,,4
+"1211525427153437",2025-10-02,,2025-10-02,Prep for User Testing with SP team (Check with Chris),Implementation Tasks,Miyoung Mary Kim,mkim@aps.org,,2025-10-23,,,Meetings Abstract Archive site (Kumiho),,,,,,,,,,
+"1210978937397002",2025-08-05,,2025-10-06,2025 Agendas and Minutes,Discussion of this work,Miyoung Mary Kim,mkim@aps.org,,,,"Please find and follow the agenda in the subtask labeled with today's date. 
+
+
+
+----------------------------------------
+
+
+Template:
+
+Stand-up Items (Updates):
+
+Items in Need of Escalation: 
+ 
+Items in Need of Discussion/Decision: 
+
+Approaching Deadlines: 
+
+Current Initiatives/Campaigns (Priorities): 
+ 
+Dates of Importance for Current Quarter:
+
+Upcoming PTO:
+
+Action items (Next Steps):
+
+Meeting Minutes:",Meetings Abstract Archive site (Kumiho),,,,,,,,,,
+"1210978937397007",2025-08-05,,2025-08-05,Upcoming,,,,,,,,,2025 Agendas and Minutes,,,,,,,,,
+"1210978937397025",2025-08-05,2025-10-16,2025-10-16,10/15/2025,,Miyoung Mary Kim,mkim@aps.org,,2025-10-15,,"https://fathom.video/share/xtKhReGBoNNe1Gcp1Eq7sUQeoKtwqQk1
+https://fathom.video/share/xtKhReGBoNNe1Gcp1Eq7sUQeoKtwqQk1?tab=summary&timestamp=0
+The team discussed the need to establish a clear HTML structure and semantic markup for the meeting content that will be published on the new archive site. Robert requested that Justin provide an example HTML document demonstrating the proposed layout and semantics, such as using H1 tags for titles and sections for abstracts. This will help ensure alignment on the desired structure before the full implementation.
+https://fathom.video/share/xtKhReGBoNNe1Gcp1Eq7sUQeoKtwqQk1?tab=summary&timestamp=159
+The group talked about the approach to data validation, with Robert emphasizing that the goal is to have a single source of truth for the data schema, using tools like Zod. However, he cautioned against getting too caught up in perfect validation, noting that the real-world data may contain errors or inconsistencies that should be displayed as-is rather than blocked. The focus should be on providing a reliable, human and machine-readable archive.
+https://fathom.video/share/xtKhReGBoNNe1Gcp1Eq7sUQeoKtwqQk1?tab=summary&timestamp=1612
+Phillip raised the need to set up redirects from the old meeting website to the new archive site, to ensure users can still access the content. This was identified as an important part of the overall project that should be broken out into separate tasks.
+https://fathom.video/share/xtKhReGBoNNe1Gcp1Eq7sUQeoKtwqQk1?tab=summary&timestamp=1817
+The group agreed to have a separate backlog grooming session to review and refine the project tasks, including the redirects and any other outstanding items. Justin will provide the example HTML structure by the next day, and Robert will review it over the weekend to provide feedback.",,2025 Agendas and Minutes,,,,,,,,,
+"1210978938238776",2025-08-05,,2025-08-05,Complete,,,,,,,,,2025 Agendas and Minutes,,,,,,,,,
+"1210978937397022",2025-08-05,2025-10-06,2025-10-06,10/02/2025,,Miyoung Mary Kim,mkim@aps.org,,2025-10-02,,"https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry
+
+Meeting Purpose
+
+https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=59.0
+
+Key Takeaways
+
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1404.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=908.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1457.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=827.0
+
+Topics
+
+Project Timeline and MVP Scope
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1404.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=908.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1472.0
+Data Handling and Schema Updates
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=69.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=89.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1224.0
+S3 Data Dumping
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=541.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=650.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1620.0
+User Acceptance Testing (UAT)
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1271.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1370.0
+Development Approach
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1030.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=893.0
+
+Next Steps
+
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=569.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1224.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1620.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1271.0
+    https://fathom.video/share/PR2z8LAzdhDG7uyuBCwxUXdxMpnxoEry?tab=summary&timestamp=1901.0
+",,2025 Agendas and Minutes,,,,,,,,,
+"1210978937397019",2025-08-05,2025-09-19,2025-09-19,9/18/2025,,Miyoung Mary Kim,mkim@aps.org,,2025-09-18,,"Kumiho checkin - September 18
+
+
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak?tab=summary&timestamp=0
+Robert and the team provided an overview of the Kumiho project, which involves creating a semantically-structured Astro-based website to display meeting content. The main goals are to use minimal technology, leverage semantic HTML, and design the pages in a way that is easily readable by both humans and AI/bots.
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak?tab=summary&timestamp=87
+The team discussed the data structure that Justin will be working with - a single JSON object containing all the meeting data, rather than a more complex relational model. They emphasized the importance of using Zod to validate the data shape and provide a clear API for Justin to work with.
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak?tab=summary&timestamp=215
+The team emphasized the importance of using semantic HTML tags (like article, section, etc.) and minimizing the use of divs and classes. They want to focus on a clean, readable HTML structure that can be easily parsed by AI, rather than relying heavily on CSS for presentation.
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak?tab=summary&timestamp=339
+The plan is for Justin to generate the HTML pages using Astro, which will then be deployed to an S3 bucket or similar static hosting solution. This will allow the team to handle the meeting routing and other functionality separately from the content rendering.
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak?tab=summary&timestamp=567
+The team identified the following key next steps for Justin:
+    Set up a new Git repository for the project
+    Bootstrap an Astro project and get a basic site running
+    Design the semantic HTML structure for the meeting pages, based on the provided data schema
+    Coordinate with the team on any data or tooling needs
+https://fathom.video/share/VRvgZYa5fJx5vvurVrYKEqwpyJmPTtak?tab=summary&timestamp=1934
+The team acknowledged that gathering and formatting all the historical meeting data is an ongoing task that will continue throughout the project. They also noted that the visual design work is not a priority for this initial phase, and can be addressed as a ""slow follow"" item after launch.",,2025 Agendas and Minutes,,,,,,,,,
+"1210978937397016",2025-08-05,2025-09-04,2025-09-04,9/4/2025 Sync,,Miyoung Mary Kim,mkim@aps.org,,2025-09-04,,"https://fathom.video/share/xhpZxZ1cPXm6_PrueibyxPLgsW8Bdavy
+https://fathom.video/share/xhpZxZ1cPXm6_PrueibyxPLgsW8Bdavy?tab=summary&timestamp=92
+Robert provided an overview of the current project status, noting that the main focus is on finalizing the object model, with plans to set up an Astro site to render the content. Elvis confirmed that the deployment infrastructure (S3 bucket and CloudFront distribution) is already in place, which will be leveraged for this new project.
+https://fathom.video/share/xhpZxZ1cPXm6_PrueibyxPLgsW8Bdavy?tab=summary&timestamp=229
+The team discussed the specific deployment setup needed for the new ""archive.aps.org"" site, including creating a new S3 bucket, CloudFront distribution, and obtaining a certificate for the domain. Elvis will handle these tasks, and the team agreed to keep the initial implementation simple without any complex styling or design.
+https://fathom.video/share/xhpZxZ1cPXm6_PrueibyxPLgsW8Bdavy?tab=summary&timestamp=490
+The team explored different options for the deployment process, including whether to use a Git repository or deploy directly to S3. They decided on a direct deployment to S3, with the Astro site handling the rendering and a separate process (potentially a Lambda function) responsible for fetching and uploading the meeting data.
+https://fathom.video/share/xhpZxZ1cPXm6_PrueibyxPLgsW8Bdavy?tab=summary&timestamp=1140
+The team discussed plans to potentially incorporate additional content in the future, such as meeting presentations and recordings, which are currently stored in different locations. They agreed to create a separate ticket to address these future requirements.
+https://fathom.video/share/xhpZxZ1cPXm6_PrueibyxPLgsW8Bdavy?tab=summary&timestamp=1270
+The team concluded the meeting, agreeing to check in again in two weeks to review progress on the initial deployment setup.",,2025 Agendas and Minutes,,,,,,,,,
+"1210978937397013",2025-08-05,2025-08-14,2025-08-14,8/14/25 Official Kickoff,,,,,2025-08-14,,"Kickoff Agenda:
+    Welcome & Introduction
+    Project overview - purpose, goal, anticipated outcomes
+    Project scope & Objectives
+    Project plan & timeline
+    RACI
+    Communication plan
+    Risk management
+    Q&A
+
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=0
+The meeting began with introductions of the project team members, including their roles and experience. Miyoung Kim, the project manager, outlined the goals of the ""Meeting Abstract Archive Site"" project, also known by the codename ""Kumio"". The project aims to create a centralized, searchable archive of past APS meeting abstracts and data to improve accessibility and discoverability.
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=526
+Robert Petersen provided an overview of the current state of the meeting data, which is scattered across various legacy systems and formats, including the Flux server and HTML pages. The team discussed the challenges of extracting and consolidating this data into a more structured and maintainable format.
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=619
+The team discussed the technical approach for the project, focusing on an initial MVP that would address the most pressing issues, such as restoring Google indexability for the meeting data. They also explored the possibility of incorporating additional historical data, such as scanned PDFs or the BAPS bulletin, into the archive in the future.
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=1014
+Miyoung Kim outlined the project management approach, including the use of Asana for task tracking, regular status updates, and coordination with stakeholders outside of the IES department as needed.
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=1584
+The team discussed the importance of comprehensive metadata tagging to improve the discoverability and searchability of the meeting data, including leveraging schema.org standards and exploring feedback from Google Scholar contacts.
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=1694
+The team discussed the origin and meaning behind the project's codename, ""Kumio"", which is based on a nine-tailed fox from Japanese mythology that accumulates knowledge over time. The team acknowledged the potential for misinterpretation and agreed to avoid using overly symbolic or potentially controversial codenames in the future.
+https://fathom.video/share/Nf-2m_Tb8FPrk8oA_xSgv36m8Pb3By75?tab=summary&timestamp=1839
+The meeting concluded with the team expressing excitement about the project and a commitment to work together effectively. Next steps include further refining the project scope, tasks, and responsibilities, as well as establishing a dedicated Slack channel for ongoing communication.",,2025 Agendas and Minutes,,,,,,,,,
+"1210987095059619",2025-08-06,2025-08-08,2025-08-14,Internal design review meeting,,Robert Petersen,rpetersen@aps.org,,2025-08-08,,"Archive Site : Design Review Pt 2 - August 08
+
+
+https://fathom.video/share/G8Z68ezbESiTuGbLydZ_iNNzV4d4YV-D
+https://fathom.video/share/G8Z68ezbESiTuGbLydZ_iNNzV4d4YV-D?tab=summary&timestamp=219
+Robert Petersen provides an overview of the archive site project, explaining that the goal is to preserve as much meeting data as possible using the least amount of technology. The plan is to extract data from various sources like the Epitome database and the Flux website, and store it in a structured JSON format that will be human-readable and maintainable for decades.
+https://fathom.video/share/G8Z68ezbESiTuGbLydZ_iNNzV4d4YV-D?tab=summary&timestamp=324
+The group dives into discussing the object model for the archive, focusing on key entities like the meeting, events, presentations, and individuals. They identify areas that need further refinement, such as handling different types of events, managing affiliations and organizations, and representing funding sources.
+https://fathom.video/share/G8Z68ezbESiTuGbLydZ_iNNzV4d4YV-D?tab=summary&timestamp=2504
+The discussion shifts to how the archive site will integrate with the link manager system and the use of DOIs. They explore options for assigning DOIs, registering them with CrossRef, and ensuring the URLs remain stable even as the content is archived.
+https://fathom.video/share/G8Z68ezbESiTuGbLydZ_iNNzV4d4YV-D?tab=summary&timestamp=3175
+The group agrees to continue refining the object model and design asynchronously, with Mary Kim helping to coordinate any necessary follow-up meetings. They also discuss the project's codename, ""Kumiho"", and other codenames used for related initiatives.",,2025 Agendas and Minutes,,[Kumiho] Finalize Technical Design and Object Model,,,,,,,
+"1210978937888981",2025-08-05,,2025-09-23,Project Closeout,Closeout,Miyoung Mary Kim,mkim@aps.org,,,,"Purpose: This task contains example project closeout tasks. Some may not apply. 
+
+System Cataloguing (e.g. Airtable/Ardoq) [Project Name]
+https://docs.google.com/forms/d/1M8j9gFYRW3kIoltl7cio3FhhMRhppRKVqrj26spLUZY/edit [Project Name]
+Project Closeout Meeting / Retrospective [Project Name]
+
+
+Guidance: 
+https://docs.google.com/document/d/13fQcBdsASPADIu2zP6pnF6CVQqZOZzEam-DepzjLan0/edit
+https://docs.google.com/document/d/1WI4GlvVDB4wwxvKhskHAOCeXf3FvkK3fEX7pVraS5Dc/edit?tab=t.0",Meetings Abstract Archive site (Kumiho),,,,,,,,,,
+"1210978937932728",2025-08-05,,2025-09-15,Post-Project Survey,,,,,,,https://docs.google.com/forms/d/1M8j9gFYRW3kIoltl7cio3FhhMRhppRKVqrj26spLUZY/edit,,Project Closeout,,,,,,,,,
+"1210978937932731",2025-08-05,,2025-09-15,Project Retrospective with core team,,,,,,,"Use Retrospectives to Make an IMPACT
+Improvement is continuous
+Mistakes are learning opportunities
+Psychological safety drives real insights
+Action turns lessons into change
+Collaboration fuels diverse perspectives
+Transform the past into future success",,Project Closeout,,,,,,,,,
+"1210978937992006",2025-08-05,,2025-08-05,Handoff to Customer Support Group (CSG) Template,,,,,,,"Handoff to Customer Support Group (CSG) Template
+Subject: [Project Name] – Handoff to CSG for Ongoing Support
+Date: [Meeting Date]
+Attendees: [List of Key Participants]
+Facilitator: [Project Lead/PM Name]
+
+Purpose
+To formally transition the [Project Name] initiative to the Customer Support Group (CSG) for ongoing support and management. This meeting ensures that all relevant processes, contacts, and workflows are in place to maintain smooth operations and address any remaining questions.
+
+Agenda & Desired Outcomes
+    Establish [Help Desk Contact] as the Primary Contact
+        Confirm that all internal and external inquiries, issues, and feedback related to [Project/System] will be routed through [help@aps.org or appropriate contact].
+        Ensure that CSG has the necessary information to manage incoming requests effectively.
+    Retire [Previous Tracking System] & Transition to CSG Workflow
+        Confirm that [existing tracking tool, e.g., Asana, Airtable] will no longer be used for feedback tracking related to [Project Name].
+        Align on the new workflow that CSG will follow to log, triage, and resolve feedback.
+    Clarify Open Questions & Future Process for Addressing Feedback
+        Discuss any outstanding issues or areas needing additional support.
+        Establish a process for escalating complex issues or requests beyond CSG’s standard workflow.
+    Confirm Documentation & Knowledge Transfer
+        Ensure that all relevant documentation, FAQs, and historical context from the project are shared with CSG.
+        Identify any additional training or reference materials required.
+
+Action Items & Next Steps
+    [Name] to finalize and share documentation by [Date].
+    [CSG Contact] to confirm receipt and readiness to take over support by [Date].
+    [Project Lead] to monitor initial transition period and provide support as needed.
+Official Transition Date: [Date]
+
+This handoff marks the conclusion of [Project Name] as an active initiative and ensures a seamless transition to CSG for ongoing management. Thank you to all involved for your contributions!",,Project Closeout,,,,,,,,,
+"1210978937992009",2025-08-05,,2025-08-05,Consolidate project resources (e.g. shared folder with vendors),,,,,,,"See https://app.asana.com/1/36328813574941/project/1206661862892614/task/1210187275570310?focus=true - step 4 should take place during closeout. Also, inform vendors once the folder was removed and no remaining updates after the project is over. ",,Project Closeout,,,,,,,,,
+"1211435378750246",2025-09-22,,2025-09-22,EPPM Project Closeout Checklist,,,,,,,,,Project Closeout,,,,,,,,,
+"1211435449992368",2025-09-23,,2025-09-23,Socialize the product to other departments,,,,,,,,,Project Closeout,,,,,,,,,
+"1210952046444356",2025-08-01,2025-10-14,2025-10-14,[Kumiho] Design Astro-based Rendering System,Complete/Close,Justin Ryan,justin@aps.org,,2025-10-14,,"Design a static site renderer using Astro based on the JSON meeting data. Evaluate reusability of templates from the current meeting platform and port/adapt as needed.
+
+Acceptance Criteria:
+- Astro rendering pipeline produces index, session, and abstract pages
+- Templates reused or ported from meeting platform where appropriate
+- Output validated against design and sample data
+
+Related Links:
+    https://github.com/APSPhysics/mako-shark/tree/main
+    https://drive.google.com/drive/folders/11NZcSqAaHzP_3dP9mUaUpyBko6Vq9Y1Z?usp=drive_link
+    https://github.com/dbohdan/classless-css?tab=readme-ov-file#latexcss 
+    https://flux.aps.org/meetings/BAPSDFD96/tocB.html
+    https://davidrzs.github.io/latexcss/math_example.html
+    https://github.com/davidrzs/latexcss/blob/master/docs/math_example.html
+","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,,"Sprint 14 (10/1-14),[Kumiho MVP] Write Import Scripts,[Kumiho] Establish page layout and semantic HTML structure for content",Done,,,,Web Solutions,8 - XXL (< 8 days),
+"1211385947855015",2025-09-17,2025-09-18,2025-09-18,Write acceptance criteria,,,,,,,,,[Kumiho] Design Astro-based Rendering System,,,,,,,,,
+"1211399845807698",2025-09-18,2025-09-29,2025-09-29,Set up Github repo,,,,,,,,,[Kumiho] Design Astro-based Rendering System,,,,,,,,,
+"1211399845807694",2025-09-18,2025-09-29,2025-09-29,Bootstrap Astro environment,,,,,,,,,[Kumiho] Design Astro-based Rendering System,,,,,,,,,
+"1211399845807695",2025-09-18,2025-09-29,2025-09-29,Establish Content API/schema  for JSON data structure,,,,,,,,,[Kumiho] Design Astro-based Rendering System,,,,,,,,,
+"1211536787078838",2025-10-02,2025-10-08,2025-10-08,Identify schema vs. data discrepancies,,,,,,,,,[Kumiho] Design Astro-based Rendering System,,,,,,,,,
+"1211399845807696",2025-09-18,2025-10-14,2025-10-14,Research and implement CSS solution,,,,,,,,,[Kumiho] Design Astro-based Rendering System,,,,,,,,,
+"1210952046444361",2025-08-01,2025-10-06,2025-10-06,[Kumiho MVP] Provision Archive Hosting Infrastructure,Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-10-06,,"Use the provisioning config to set up the hosting environment for the archive site.
+
+Acceptance Criteria:
+- S3 + CloudFront environment set up and reachable
+- HTTPS enabled and working
+- Permissions and access controls verified
+
+Document: https://apsphysics.atlassian.net/wiki/spaces/SWENG/pages/4132896819/Kumiho+Meetings+Archive","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,Write Infrastructure Provisioning Config,Sprint 14 (10/1-14),Done,,,,Web Solutions,,1 - highest priority
+"1210952046444357",2025-08-01,2025-10-02,2025-10-02,[Duplicate] Write Meeting Rendering Script,Complete/Close,Mike DiGioia,mdigioia@aps.org,,,,"Create a script that converts each JSON meeting document into static HTML using the rendering system. Organize output into the required directory structure.
+
+Acceptance Criteria:
+- Script reads JSON and renders pages to correct paths
+- Outputs valid HTML/CSS with no broken links
+- Supports incremental rendering of updated meetings","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,Done,,,,Web Solutions,,
+"1210382188323385",2025-05-27,2025-10-02,2025-10-14,Archive legacy meetings for google scholar scraping,Complete/Close,Robert Petersen,rpetersen@aps.org,,,,"    Setup epitome redirects (possible using cloudflare to avoid modifying the Coldfusion app)
+    Get the older meetings into the current meeting platform
+","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,Configure APS meeting sites for Google Scholar indexing,Done,,,,Web Solutions,PROJECT (tracked separately),1 - highest priority
+"1210744538890642",2025-07-08,,2025-07-08,Create a script that will generate simple pages for us to host via meetings platform.  [One time generated files - via script to target specific meeting],,,,,,,,,Archive legacy meetings for google scholar scraping,,,,,,,,,
+"1210987095059623",2025-08-06,2025-10-01,2025-10-01,[Kumiho] Finalize URL Format,Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-09-30,,"Approve and document the archive meeting URL format in this document : https://docs.google.com/document/d/1mPzyIrjQ5k3U35g-HZMyFYRUFF7mhwlr3ZBVvF2RYQ0/edit?usp=sharing
+
+From the doc:
+
+> The URL should follow this patten:
+https://[archival host]/[meeting]/[year]/[session code]/[abstract id].html 
+where:
+https://[archival host]/[meeting]/ delivers the meeting page
+https://[archival host]/[meeting].json the meeting JSON document
+https://[archival host]/[meeting]/[year]/[session code]/ delivers the session page
+https://[archival host]/[meeting]/[year]/[session code]/[abstract id].html delivers the abstract page.
+
+
+AC : comment below that the URL format is acceptable","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,,"[Kumiho Phase2] Finalize Visual Design and URL Format,WEB Sprint 13 (9/17-30)",Done,,,,Web Solutions,,
+"1211471971804287",2025-09-25,2025-09-30,2025-09-30,[mako shark] meeting data,Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-09-30,,,"IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho),Meetings Website Improvement",,,WEB Sprint 13 (9/17-30),Done,,,,Web Solutions,,
+"1211398135536053",2025-09-18,2025-09-30,2025-09-30,Review & adjust JSON document,Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-09-26,,"https://drive.google.com/file/d/1hg-H6jXHcXCkezwYpBJdoxlKi59lz6gN/view?usp=drive_link
+
+Robert asked Mat and Geng for their review.","Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,Create JSON Schema Document,"[Kumiho] Finalize Technical Design and Object Model,WEB Sprint 13 (9/17-30)",Done,,,,Web Solutions,3 - L (< 3 days),
+"1210987095059621",2025-08-06,2025-09-30,2025-09-30,Sample Meeting Doc (DAMOP),Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-09-30,,,"Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,,"[Kumiho] Finalize Technical Design and Object Model,WEB Sprint 13 (9/17-30)",Done,,,,Web Solutions,5 - XL (< 5 days),
+"1210952046444358",2025-08-01,2025-09-22,2025-09-22,Write Deployment Script,Complete/Close,Elvis Asongafac,asongafac@aps.org,,2025-09-19,,"Create a deployment script that uploads the rendered site to an S3 bucket and invalidates CloudFront caches.
+
+Acceptance Criteria:
+- Script supports deploy to designated S3 bucket
+- Cache invalidation via CloudFront confirmed
+- Dry-run and verbose modes included","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,Done,,,,Enterprise Architecture,,
+"1210952046444359",2025-08-01,2025-09-09,2025-09-09,Write Infrastructure Provisioning Config,Complete/Close,Elvis Asongafac,asongafac@aps.org,,2025-09-10,,"Create IaC (e.g., Terraform) config to provision S3 buckets, CloudFront distributions, and any necessary IAM roles.
+
+Acceptance Criteria:
+- Infra config provisions resources automatically
+- IAM roles and policies scoped correctly
+- Outputs reusable for staging and production
+
+archive.aps.org",Meetings Abstract Archive site (Kumiho),,,[Kumiho MVP] Provision Archive Hosting Infrastructure,Done,,,,Web Solutions,,
+"1210987095059620",2025-08-06,2025-09-08,2025-09-18,Create JSON Schema Document,Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-09-05,,AC?,"Web Solutions Team (WEB),IS WEB EXID Sprint Board - 2025,Meetings Abstract Archive site (Kumiho)",,,"[Kumiho] Finalize Technical Design and Object Model,WEB Sprint 12 (9/3-16),Review & adjust JSON document",Done,,,,Web Solutions,,
+"1210998375241065",2025-08-07,2025-08-07,2025-09-08,Discovery: Prepare and write project document,Complete/Close,Robert Petersen,rpetersen@aps.org,,2025-07-30,,Prepared the document to establish the project: https://docs.google.com/document/d/1mPzyIrjQ5k3U35g-HZMyFYRUFF7mhwlr3ZBVvF2RYQ0/edit?tab=t.0#heading=h.r81ptpknmen2,Meetings Abstract Archive site (Kumiho),,,,,,,,Web Solutions,,
+"1210978937932713",2025-08-05,2025-08-26,2025-09-08,Project Setup,Complete/Close,Miyoung Mary Kim,mkim@aps.org,,2025-08-26,,"Purpose: Discuss needs and organize resources so that we can kick off this project. 
+
+Guidance: https://docs.google.com/document/d/13fQcBdsASPADIu2zP6pnF6CVQqZOZzEam-DepzjLan0/edit
+
+Decisions:
+    Meeting cadence [sponsors, team]
+    Slack channel [name, members]
+    https://docs.google.com/presentation/d/1eUkJFa4gwreHNS27Fok8ATcuJxt53iUW/edit#slide=id.g30cf6c38526_2_125 (2025)
+        Cross-team dependencies
+        Project Team
+",Meetings Abstract Archive site (Kumiho),,,,,,,,,,
+"1210978937992012",2025-08-05,2025-08-07,2025-08-07,Familiarize with resources,,Miyoung Mary Kim,mkim@aps.org,,2025-08-07,,,,Project Setup,,,,,,,,,
+"1210978937992018",2025-08-05,2025-08-13,2025-08-13,Create google drive,,,,,,,,,Project Setup,,,,,,,,,
+"1210978937992021",2025-08-05,2025-08-25,2025-08-25,Create RACI & update Asana milestones,,Miyoung Mary Kim,mkim@aps.org,,2025-08-25,,https://docs.google.com/spreadsheets/d/1P-_LYq5wp2mejwZtoQjXO1iJCO3PUU3cc5QuceBZug0/edit?gid=839106955#gid=839106955,,Project Setup,,,,,,,,,
+"1210978937992024",2025-08-05,2025-08-13,2025-08-13,Create/Review PID [Project Initiation Document],,,,,,,,,Project Setup,,,,,,,,,
+"1210978937992027",2025-08-05,2025-08-14,2025-08-14,Socialize resources and project,,Miyoung Mary Kim,mkim@aps.org,,2025-08-08,,"New launch date (if all goes well): 8/25 
+    The DEV team will complete all MVP showstopper items by 8/19.
+    The EP3 team will send the staging site link to EP3 L for review and gather feedback for 3 business days from 8/20 to 8/22.
+    I have reorganized and sorted new tickets in the EP3 project.
+",,Project Setup,,,,,,,,,
+"1210978937992030",2025-08-05,2025-08-26,2025-08-26,Schedule ongoing meetings,,Miyoung Mary Kim,mkim@aps.org,,2025-08-15,,,,Project Setup,,,,,,,,,
+"1210992052111716",2025-08-06,2025-08-07,2025-08-07,Schedule Kickoff,,Miyoung Mary Kim,mkim@aps.org,,2025-08-07,,All members of this project should be in the kickoff,,Project Setup,,,,,,,,,

@@ -1,0 +1,197 @@
+Task ID,Created At,Completed At,Last Modified,Name,Section/Column,Assignee,Assignee Email,Start Date,Due Date,Tags,Notes,Projects,Parent task,Blocked By (Dependencies),Blocking (Dependencies),Task Status,Lifecycle Stage,Project Status,APS Department,IS Teams,Task Size (IS) ,Rank Priority
+,2025-10-17,,2025-10-17,Build the Meeting Page Template (Semantic HTML),Implementation Tasks,,,,,,"User Story:
+As a visitor, I want to open a meeting page that summarizes the meeting and links to its sessions so I can quickly navigate to topics and talks that interest me.
+
+Requirements / Clarifying Questions:
+- Render strictly semantic HTML — no custom CSS or JS.
+  - Question: confirm if an embedded reset/normalize stylesheet is permitted to improve default readability, or truly zero CSS.
+- Input: one UTF-8 JSON file per meeting (structure per project object model).
+- Output: /{series}/{year}/index.html and /{series}/{year}/meeting.json.
+- Must include: start date, end date, location, description, list of sessions (each links to its session page).
+- Include title tag, meta charset tag, link rel canonical tag.
+- Breadcrumbs: not required, but confirm with Chris before omitting entirely.
+
+Acceptance Criteria:
+- Meeting page renders valid HTML5.
+- Data elements display correctly from provided JSON.
+- Session links resolve to their session pages.
+- Canonical link points to the correct meeting URL.
+- Page can be viewed with no CSS or JS dependencies.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Build the Session Page Template (Semantic HTML),Implementation Tasks,,,,,,"User Story:
+As a visitor, I want to view a session page with full context and a list of its presentations so I can find specific talks or posters easily.
+
+Requirements / Clarifying Questions:
+- Input: session data pulled from meeting JSON.
+- Output path: /{series}/{year}/{session_code}/index.html.
+- Must include:
+  - Parent meeting link (text-only).
+  - Title, Description, Event Chair, Topics, Sponsoring Units, Location/Room.
+  - List of abstracts/presentations/posters (links to abstract pages).
+- JSON field names for Chair, Topics, Sponsors, and Location should be confirmed or added as placeholders until schema is finalized.
+- Follow same semantic HTML rules (no styling). All tickets in this set follow the same semantic HTML requirement for accessibility, readability, and long-term archiving.
+
+Acceptance Criteria:
+- Page shows all required data fields.
+- Abstract list links correctly to each abstract page.
+- Canonical link points to session URL.
+- Valid HTML output; no visual styling required.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Build the Abstract Page Template (Semantic HTML),Implementation Tasks,,,,,,"User Story:
+As a researcher or archivist, I want each abstract to have its own static, readable page so I can link or cite it easily.
+
+Question: Do these abstracts have DOIs? Do they need them? (Dan B recommends this.)
+
+Requirements / Clarifying Questions:
+- Input: abstract data from session JSON.
+- Output path: /{series}/{year}/{session_code}/{abstract_id}.html.
+- Must include:
+  - Link to parent session.
+  - Title.
+  - Flags for ""is invited"" and ""is withdrawn.""
+  - Submitter and Authors list (ordered).
+- Placeholders for submitter and authors keys (confirm final field names once schema is finalized).
+- Follow same semantic HTML and metadata requirements.
+
+Acceptance Criteria:
+- Abstract page displays all required data.
+- Canonical link points to the abstract's URL.
+- All internal navigation works.
+- HTML validates and loads with no scripts or styles.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Global Layout Shell, Metadata, and Canonical URL Setup,Implementation Tasks,,,,,,"User Story:
+As a maintainer, I want all pages to share a consistent, accessible base structure and metadata so the site feels coherent and is easily archived.
+
+Requirements / Clarifying Questions:
+- Provide a shared HTML shell (i.e., the shared HTML template structure — the base head and body markup all pages use) used by all page types.
+- Include:
+  - meta charset tag with utf-8
+  - title tag (dynamic per page)
+  - link rel canonical tag
+  - Structural landmarks: header tag, main tag, footer tag
+- No CSS or JS.
+  - Question: confirm if a lightweight normalize or accessibility stylesheet may be embedded for basic readability.
+- Breadcrumbs: not required per current decision — but confirm before finalizing.
+- Question: should we include schema.org/Event or similar microdata now for semantic searchability, or defer to a later enhancement?
+
+Acceptance Criteria:
+- All three page templates inherit this shared shell.
+- Metadata populates correctly.
+- Canonical links are valid and resolve correctly.
+- HTML structure validates and is consistent across page types.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Static Generation Pipeline & Sample Data Fixtures,Implementation Tasks,,,,,,"User Story:
+As a developer, I want to automatically generate the meeting archive pages from JSON files so I can publish a new archive without manual HTML editing.
+
+Requirements / Clarifying Questions:
+- Implement a static generation process using Astro or Eleventy (confirm preference).
+- Command: npm run build or similar. (replace with correct approach)
+- Input: meeting JSON matching the current object model (add placeholders if needed).
+- Output: static directory structure:
+  - /meeting/index.html, /meeting/meeting.json
+  - /meeting/session/index.html
+  - /meeting/session/abstract.html
+- Question: Confirm hosting target — is the initial deployment intended for S3 + CloudFront, local filesystem, or another host?
+- Include 1–2 sample meeting JSON fixtures and minimal documentation (README).
+
+Acceptance Criteria:
+- Build script runs successfully and outputs valid HTML.
+- Directory structure matches design (meeting/session/abstract).
+- All pages open locally and via static hosting (no JS required).
+- Sample fixture JSON is included and documented.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Stable URL Architecture & Canonicalization,Implementation Tasks,,,,,,"Goal: Define and implement a permanent, collision-proof URL scheme for all APS meetings (past/current/future) and publish canonical links for archived content.
+
+User story:
+As a researcher, I want stable, human-readable URLs for meeting pages, sessions, and abstracts so I can cite and revisit them reliably years later.
+
+Requirements / open questions:
+- Adopt the archive URL pattern from the Meeting Archive Design, e.g. https://[archival-host]/[series]/[year]/[session-code]/[abstract-id].html; directory requests map to index pages; publish meeting.json adjacent to HTML for each meeting.
+- Document path conventions for multi-meeting scheduler to avoid collisions (e.g., namespace by series + year; enforce lowercase slugs; forbid renames once published).
+- Canonicalization for past meetings: add link rel canonical tag with href pointing to archive-URL to live pages during transition.
+- This ticket stops at canonical tag placement and stable URL creation only; do not include redirect implementation here (handled in Ticket 4).
+- Open Q: Which host is the archival origin of truth? (e.g., meetings.aps.org vs. dedicated archive.aps.org).
+- Open Q: Confirm that only past/archive URLs are in scope for canonicalization (assumption: yes).
+
+Acceptance criteria:
+- URL scheme doc approved (paths for meeting, session, abstract, downloadable JSON).
+- Sample build renders for one or more legacy meetings and one or more current meetings without collisions.
+- Canonical tags present on corresponding live pages for migrated meetings; no redirect logic included here.
+- All generated URLs are deterministic from input JSON and remain unchanged on rebuilds.
+
+Technical notes:
+- Keep URLs ASCII-safe; reserve set for slugs; store original titles separately for display.
+- Do not leak internal IDs in public paths unless they are already public and permanent.
+
+Dependencies:
+- Prerequisite for Ticket 2 (sitemap), Ticket 3 (metadata), and Ticket 4 (redirects). Must complete first to define canonical paths used downstream.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Unified Sitemap & Public Archive Listing,Implementation Tasks,,,,,,"Goal: Make all crawlable archive URLs discoverable: a machine XML sitemap and a human ""bulletin"" listing page.
+
+User story:
+As a search engine and as a human visitor, I want a comprehensive index of APS meeting content so I can find sessions/abstracts across years.
+
+Requirements / open questions:
+- Generate an XML sitemap containing only past/archive URLs (assumption) with lastmod timestamps and priority hints.
+- Auto-update sitemap on each publish.
+- Build a global archive listing page (/listing/ or agreed path) that aggregates links to every meeting across series/years. It must not rebuild per-meeting pages (those are handled by the Archive Site Design ticket set); it may link down to session and abstract pages for crawlability.
+- Open Q: Confirm final path for listing page and whether it should include legacy series that are now merged.
+- Open Q: One sitemap index vs. multiple per year/series for size control.
+
+Acceptance criteria:
+- Valid sitemap.xml (and sitemap_index.xml if used) published at site root; passes Search Console validation.
+- Global listing page renders a cross-year index with working links to meetings, sessions, abstracts, without generating or duplicating per-meeting index pages.
+- Spot-check: 100% of rendered pages appear in sitemap; no noindex or robots conflicts.
+
+Technical notes:
+- Keep per-file counts under common engine limits (~50k URLs/50MB uncompressed per file).
+- Include meeting JSON URLs in sitemap if we want them discoverable by external tools.
+
+Dependencies:
+- Depends on Ticket 1 (URL Architecture) to define canonical and stable paths before sitemap generation.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Google Scholar Bibliographic Metadata,Implementation Tasks,,,,,,"Goal: Embed complete meta name citation tags on abstract/session pages so Google Scholar can index properly.
+
+User story:
+As a scholar, I want complete bibliographic metadata on abstract pages so my citations resolve correctly in Google Scholar.
+
+Requirements / open questions:
+- Source of truth is the static meeting JSON (assumption). Map fields to the Scholar spec.
+- Required/primary tags per spec include (non-exhaustive): citation_title, citation_conference_title, citation_publication_date (YYYY[/MM[/DD]]), citation_author (repeatable with grouped author info), citation_author_institution (repeatable), citation_author_email (if policy allows), citation_abstract, citation_pdf_url (if available, must be same host as HTML), citation_publisher, citation_language, and optional conference fields/keywords where applicable.
+- Encoding & escaping: use same page encoding (UTF-8), escape angle brackets and ampersands and any delimiter characters in meta values; skip missing fields (no placeholders).
+- Author ordering must match the abstract; group each author's fields with citation_author first; ORCID optional (citation_author_orcid).
+- Publication vs. online dates: include at least one of citation_publication_date or citation_online_date; both allowed when distinct.
+- Open Q: Are author emails permitted under APS privacy policy for public pages? If not, omit citation_author_email.
+- Open Q: Confirm the publisher string to use consistently (e.g., ""American Physical Society"").
+
+Acceptance criteria:
+- For a sample set (200 or more abstracts across 3 or more meetings), pages contain valid, escaped citation meta tags meeting the above rules; automated validator shows no missing required fields.
+- Author order in tags matches display order; multi-author grouping verified.
+- If PDFs exist, citation_pdf_url resolves on the same host as the abstract HTML; otherwise tag omitted.
+- Spot-checked by fetching HTML and parsing tags; results match JSON values.
+
+Technical notes:
+- Include keywords via citation_keywords (semicolon-separated) when available; support conference abbreviations via citation_conference_abbrev (repeatable).
+- Consider citation_fulltext_world_readable when content is permanently free-to-read.
+
+Dependencies:
+- Depends on Ticket 1 (canonical URLs) to ensure consistent metadata linking.
+- Runs after Ticket 2 (sitemap) for discoverability testing.
+- Must complete and pass validation before Ticket 4 (redirects) is enabled to avoid crawler confusion.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
+,2025-10-17,,2025-10-17,Legacy Redirects (Epitome to meetings.aps.org),Implementation Tasks,,,,,,"Goal: Preserve link equity and user bookmarks by redirecting legacy Epitome abstract URLs (and other prior hosts) to the new archive URLs.
+
+User story:
+As a researcher following an old link, I want to land on the correct modern abstract page without errors so I can access the content seamlessly.
+
+Requirements / open questions:
+- Implement HTTP 308 Permanent Redirects from all legacy abstract/session/meeting URLs to the canonical archive URLs.
+- Open Q: Do we have a complete mapping of legacy URLs to new URLs? If not, plan a derivation strategy (e.g., from legacy IDs, slugs, or exported tables) and produce a mapping file under version control.
+- Redirects must preserve query strings where necessary and avoid redirect chains/loops.
+- Staged rollout: enable per-meeting after Ticket 1 canonical tags are live and after Ticket 3 metadata passes validation.
+- Scope note: This ticket does not modify canonical tags or URL patterns; those are defined in Ticket 1.
+
+Acceptance criteria:
+- Mapping exists and covers 99% or more of legacy URLs for targeted migrations; missing entries logged and remediated.
+- Hitting a sample of legacy URLs returns 308 to the expected archive URL; latency under 150ms at edge.
+- Search Console shows decreasing legacy 404s and successful canonicalization.
+
+Technical notes:
+- Prefer edge-level rules (e.g., CloudFront Functions/Lambda@Edge) or origin rewrites depending on hosting.
+- Maintain a regression test that crawls the mapping and verifies 308 targets.
+
+Dependencies:
+- Depends on Ticket 1 (URL Architecture) to know canonical targets.
+- Runs after Ticket 3 (metadata) so redirect targets are fully indexed and validated.","Web Solutions Team (WEB),Meetings Abstract Archive site (Kumiho)",,,,,,,,,,
