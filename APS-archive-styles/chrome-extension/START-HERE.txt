@@ -1,0 +1,50 @@
+================================================================================
+                    🚨 READ THIS FIRST 🚨
+================================================================================
+
+Before loading the extension, you MUST generate icon files!
+
+STEP 1: Generate Icons (2 minutes)
+-----------------------------------
+
+1. Double-click "create-icons.html" (opens in Chrome)
+
+2. Click the blue button: "Generate & Download All Icons"
+
+3. Save all 3 PNG files when prompted
+
+4. Move the 3 files to the "icons/" folder:
+   ✓ icons/icon16.png
+   ✓ icons/icon48.png
+   ✓ icons/icon128.png
+
+
+STEP 2: Load Extension
+-----------------------
+
+1. Open: chrome://extensions/
+
+2. Enable "Developer mode" (top-right toggle)
+
+3. Click "Load unpacked"
+
+4. Select this folder: chrome-extension/
+
+5. Done! Extension loaded ✅
+
+
+STEP 3: Use It
+--------------
+
+1. Visit: https://archive.aps.org
+
+2. Click extension icon in toolbar
+
+3. Click "Apply & Refresh"
+
+4. See styled site! 🎉
+
+
+================================================================================
+                    Need help? See SETUP.md
+================================================================================

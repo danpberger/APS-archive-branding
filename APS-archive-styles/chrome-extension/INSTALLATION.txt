@@ -1,0 +1,131 @@
+================================================================================
+  APS ARCHIVE BRANDING POC - CHROME EXTENSION
+  Quick Installation Guide
+================================================================================
+
+🚨 STEP 0: Generate Icon Files (REQUIRED - 2 minutes)
+------------------------------------------------------
+
+The extension needs icon files to load!
+
+1. Open "create-icons.html" in Chrome (double-click it)
+
+2. Click the blue "Generate & Download All Icons" button
+
+3. Save all 3 files when prompted:
+   - icon16.png
+   - icon48.png
+   - icon128.png
+
+4. Move these 3 PNG files to the "icons/" folder
+
+You should now have:
+   chrome-extension/icons/icon16.png
+   chrome-extension/icons/icon48.png
+   chrome-extension/icons/icon128.png
+
+See SETUP.md for detailed instructions if needed.
+
+
+STEP 1: Load Extension in Chrome
+---------------------------------
+
+1. Open Chrome and navigate to:
+   chrome://extensions/
+
+2. Enable "Developer mode" (toggle in top-right)
+
+3. Click "Load unpacked" button
+
+4. Select this folder:
+   APS-archive-styles/chrome-extension/
+
+5. Extension will appear in your toolbar
+   (If not visible, click puzzle icon and pin it)
+
+
+STEP 2: Test on Archive Site
+-----------------------------
+
+1. Visit: https://archive.aps.org
+
+2. Click the extension icon in toolbar
+
+3. Verify toggles are enabled:
+   ✓ Enable Styling
+   ✓ CSS Branding
+   ✓ JS Enhancements
+
+4. Click "Apply & Refresh" button
+
+5. Page will reload with APS branding applied!
+
+
+WHAT TO EXPECT
+--------------
+
+✓ Jost font throughout
+✓ APS blue color scheme (#00538b)
+✓ Card-based layout with hover effects
+✓ Sticky header with logo
+✓ Breadcrumb navigation
+✓ Back-to-top button (bottom-right)
+✓ Print button (bottom-left)
+✓ Session filters (on pages with 10+ sessions)
+
+
+TROUBLESHOOTING
+---------------
+
+Extension not showing?
+→ Check chrome://extensions/ - is it enabled?
+
+Styles not applying?
+→ Click extension icon → "Apply & Refresh"
+
+Still not working?
+→ Open DevTools (F12) → Console tab
+→ Look for "✓ APS Archive CSS injected" message
+
+
+OPTIONAL: Generate Icons
+-------------------------
+
+1. Open icons/generate-icons.html in Chrome
+2. Click "Generate & Download Icons"
+3. Save PNG files to icons/ folder
+
+Extension works without custom icons!
+
+
+MAKING CHANGES
+--------------
+
+Edit CSS:  archive-branding.css
+Edit JS:   archive-enhancements.js
+Then:      Just refresh archive.aps.org page!
+
+
+UNINSTALL
+---------
+
+chrome://extensions/ → Find extension → Click "Remove"
+
+
+DOCUMENTATION
+-------------
+
+Full docs:     README.md
+Quick start:   ../CHROME-EXTENSION.md
+Icon help:     icons/README.md
+
+
+QUESTIONS?
+----------
+
+Check README.md or contact project team
+
+
+================================================================================
+Ready? Open chrome://extensions/ and click "Load unpacked"!
+================================================================================

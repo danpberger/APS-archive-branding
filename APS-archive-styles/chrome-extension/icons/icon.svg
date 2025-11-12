@@ -1,0 +1,20 @@
+<svg width="128" height="128" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with APS blue gradient -->
+  <defs>
+    <radialGradient id="bgGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#3073a2;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00538b;stop-opacity:1" />
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="128" height="128" fill="url(#bgGradient)" rx="16"/>
+
+  <!-- "APS" text -->
+  <text x="64" y="68" font-family="Arial, sans-serif" font-size="45" font-weight="bold"
+        fill="#ffffff" text-anchor="middle" dominant-baseline="middle">APS</text>
+
+  <!-- "POC" badge -->
+  <text x="64" y="102" font-family="Arial, sans-serif" font-size="19" font-weight="normal"
+        fill="#00b48d" text-anchor="middle">POC</text>
+</svg>

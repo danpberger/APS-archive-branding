@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Create Extension Icons - Save All Three Files</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #f5f5f5;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #00538b;
+      margin-top: 0;
+    }
+    .instructions {
+      background: #eff4ff;
+      padding: 20px;
+      border-radius: 6px;
+      border-left: 4px solid #00538b;
+      margin: 20px 0;
+    }
+    .instructions ol {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    .instructions li {
+      margin: 8px 0;
+    }
+    button {
+      background: #00538b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background: #3073a2;
+    }
+    .preview {
+      display: flex;
+      gap: 30px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    .icon-box {
+      text-align: center;
+    }
+    .icon-box canvas {
+      border: 2px solid #ddd;
+      border-radius: 4px;
+      background: white;
+    }
+    .icon-box p {
+      margin-top: 10px;
+      font-weight: bold;
+      color: #00538b;
+    }
+    .success {
+      background: #cafdff;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: none;
+    }
+    .error {
+      background: #ffe6e6;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 20px;
+      display: none;
+      color: #c00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎨 APS Extension Icon Creator</h1>
+
+    <div class="instructions">
+      <strong>Instructions:</strong>
+      <ol>
+        <li><strong>Click button below</strong> to generate all three icon files</li>
+        <li><strong>Save each file</strong> when prompted by your browser</li>
+        <li><strong>Move files</strong> to: <code>chrome-extension/icons/</code> folder</li>
+        <li><strong>Reload extension</strong> in Chrome</li>
+      </ol>
+      <p><strong>⚠️ Important:</strong> You must download ALL THREE files (icon16.png, icon48.png, icon128.png) for the extension to load!</p>
+    </div>
+
+    <button onclick="generateAndDownloadAll()" style="font-size: 18px; padding: 20px 40px;">
+      📥 Generate & Download All Icons
+    </button>
+
+    <div class="preview">
+      <div class="icon-box">
+        <canvas id="canvas16" width="16" height="16"></canvas>
+        <p>16×16 (Toolbar)</p>
+      </div>
+      <div class="icon-box">
+        <canvas id="canvas48" width="48" height="48"></canvas>
+        <p>48×48 (Extensions)</p>
+      </div>
+      <div class="icon-box">
+        <canvas id="canvas128" width="128" height="128"></canvas>
+        <p>128×128 (Store)</p>
+      </div>
+    </div>
+
+    <div id="success" class="success">
+      ✅ <strong>Success!</strong> All three icons have been generated. Check your Downloads folder for:
+      <ul>
+        <li>icon16.png</li>
+        <li>icon48.png</li>
+        <li>icon128.png</li>
+      </ul>
+      Move these files to the <code>chrome-extension/icons/</code> folder.
+    </div>
+
+    <div id="error" class="error">
+      ❌ <strong>Error:</strong> Failed to generate icons. Please try again or contact support.
+    </div>
+  </div>
+
+  <script>
+    function drawIcon(canvas, size) {
+      const ctx = canvas.getContext('2d');
+
+      // Clear canvas
+      ctx.clearRect(0, 0, size, size);
+
+      // Background with rounded corners (if size allows)
+      ctx.fillStyle = '#00538b';
+      if (size >= 32) {
+        roundRect(ctx, 0, 0, size, size, size * 0.125);
+      } else {
+        ctx.fillRect(0, 0, size, size);
+      }
+
+      // Add gradient overlay
+      const gradient = ctx.createRadialGradient(size * 0.5, size * 0.5, 0, size * 0.5, size * 0.5, size * 0.7);
+      gradient.addColorStop(0, 'rgba(48, 115, 162, 0.3)');
+      gradient.addColorStop(1, 'rgba(0, 83, 139, 0)');
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, size, size);
+
+      // Draw "APS" text
+      ctx.fillStyle = '#ffffff';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+
+      if (size >= 48) {
+        ctx.font = `bold ${size * 0.35}px Arial, sans-serif`;
+        ctx.fillText('APS', size / 2, size * 0.45);
+
+        // Draw "POC" badge
+        ctx.font = `${size * 0.15}px Arial, sans-serif`;
+        ctx.fillStyle = '#00b48d';
+        ctx.fillText('POC', size / 2, size * 0.75);
+      } else if (size >= 32) {
+        ctx.font = `bold ${size * 0.4}px Arial, sans-serif`;
+        ctx.fillText('APS', size / 2, size / 2);
+      } else {
+        // For 16x16, just show "A"
+        ctx.font = `bold ${size * 0.6}px Arial, sans-serif`;
+        ctx.fillText('A', size / 2, size / 2);
+      }
+    }
+
+    function roundRect(ctx, x, y, width, height, radius) {
+      ctx.beginPath();
+      ctx.moveTo(x + radius, y);
+      ctx.lineTo(x + width - radius, y);
+      ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+      ctx.lineTo(x + width, y + height - radius);
+      ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+      ctx.lineTo(x + radius, y + height);
+      ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+      ctx.lineTo(x, y + radius);
+      ctx.quadraticCurveTo(x, y, x + radius, y);
+      ctx.closePath();
+      ctx.fill();
+    }
+
+    function downloadCanvas(canvas, filename) {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob(function(blob) {
+          if (!blob) {
+            reject(new Error('Failed to create blob'));
+            return;
+          }
+
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = filename;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+
+          setTimeout(() => {
+            URL.revokeObjectURL(url);
+            resolve();
+          }, 100);
+        }, 'image/png');
+      });
+    }
+
+    async function generateAndDownloadAll() {
+      try {
+        document.getElementById('success').style.display = 'none';
+        document.getElementById('error').style.display = 'none';
+
+        // Draw all icons
+        const canvas16 = document.getElementById('canvas16');
+        const canvas48 = document.getElementById('canvas48');
+        const canvas128 = document.getElementById('canvas128');
+
+        drawIcon(canvas16, 16);
+        drawIcon(canvas48, 48);
+        drawIcon(canvas128, 128);
+
+        // Small delay to ensure rendering is complete
+        await new Promise(resolve => setTimeout(resolve, 100));
+
+        // Download all three
+        await downloadCanvas(canvas16, 'icon16.png');
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        await downloadCanvas(canvas48, 'icon48.png');
+        await new Promise(resolve => setTimeout(resolve, 200));
+
+        await downloadCanvas(canvas128, 'icon128.png');
+
+        // Show success message
+        document.getElementById('success').style.display = 'block';
+
+      } catch (error) {
+        console.error('Error generating icons:', error);
+        document.getElementById('error').style.display = 'block';
+      }
+    }
+
+    // Draw preview on load
+    window.addEventListener('load', function() {
+      drawIcon(document.getElementById('canvas16'), 16);
+      drawIcon(document.getElementById('canvas48'), 48);
+      drawIcon(document.getElementById('canvas128'), 128);
+    });
+  </script>
+</body>
+</html>

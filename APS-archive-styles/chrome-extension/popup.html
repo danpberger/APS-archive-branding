@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APS Archive Branding POC</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="header">
+    <h1>APS Archive Branding</h1>
+    <p>Testing / POC Extension</p>
+  </div>
+
+  <div class="content">
+    <div id="status" class="status"></div>
+
+    <div class="section">
+      <div class="section-title">Styling Controls</div>
+      <div class="toggle-group">
+
+        <div class="toggle-item">
+          <div class="toggle-label">
+            <span class="toggle-label-main">Enable Styling</span>
+            <span class="toggle-label-sub">Apply APS branding to archive.aps.org</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="enabledToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-item">
+          <div class="toggle-label">
+            <span class="toggle-label-main">CSS Branding <span class="badge">24KB</span></span>
+            <span class="toggle-label-sub">Typography, colors, layout</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="cssToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="toggle-item">
+          <div class="toggle-label">
+            <span class="toggle-label-main">JS Enhancements <span class="badge">8KB</span></span>
+            <span class="toggle-label-sub">Back to top, filters, print button</span>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="jsToggle">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="actions">
+      <button id="refreshBtn" class="btn-primary">Apply & Refresh</button>
+      <button id="resetBtn" class="btn-secondary">Reset</button>
+    </div>
+  </div>
+
+  <div class="footer">
+    <strong>POC Only</strong> · Not for production use<br>
+    <a href="https://archive.aps.org" target="_blank">archive.aps.org</a>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
