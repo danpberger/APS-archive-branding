@@ -213,8 +213,12 @@ a:focus {
    ============================================================================ */
 
 header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
   background-color: #ffffff;
-  border-bottom: none;
+  border-bottom: 1px solid var(--aps-neutral-200);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
 }
 
 header > a {
@@ -267,31 +271,18 @@ header h1 {
    6. LAYOUT - NAVIGATION (Breadcrumbs)
    ============================================================================ */
 
-/* Broader breadcrumb selector - works with aria-label */
-nav[aria-label="Breadcrumb"],
 nav[data-astro-cid-qaanghzh] {
   background-color: var(--aps-neutral-100);
-  border: none;
-  /* Break out of main padding to go full width */
-  margin-left: calc(-1 * var(--spacing-md));
-  margin-right: calc(-1 * var(--spacing-md));
-  margin-top: calc(-1 * var(--spacing-xl));
-  margin-bottom: var(--spacing-lg);
+  border-bottom: 1px solid var(--aps-neutral-200);
   padding: var(--spacing-sm) var(--spacing-md);
 }
 
 @media (min-width: 1024px) {
-  nav[aria-label="Breadcrumb"],
   nav[data-astro-cid-qaanghzh] {
-    /* Break out of main's 64px padding */
-    margin-left: calc(-1 * var(--container-padding));
-    margin-right: calc(-1 * var(--container-padding));
-    margin-top: calc(-1 * var(--spacing-2xl));
     padding: var(--spacing-sm) var(--container-padding);
   }
 }
 
-nav[aria-label="Breadcrumb"] ol,
 nav[data-astro-cid-qaanghzh] ol[data-astro-cid-qaanghzh] {
   list-style: none;
   padding: 0;
@@ -299,30 +290,15 @@ nav[data-astro-cid-qaanghzh] ol[data-astro-cid-qaanghzh] {
   display: flex;
   flex-wrap: wrap;
   font-size: var(--aps-text-sm);
-  /* Flush left, no max-width constraint */
+  max-width: var(--container-max);
+  margin: 0 auto;
 }
 
-nav[aria-label="Breadcrumb"] ol li,
 nav[data-astro-cid-qaanghzh] ol[data-astro-cid-qaanghzh] li[data-astro-cid-qaanghzh] {
   display: inline-flex;
   align-items: center;
 }
 
-/* Remove bullets from breadcrumb - critical fix */
-nav[aria-label="Breadcrumb"] ol {
-  display: flex !important;
-  grid-template-columns: unset !important;
-}
-
-nav[aria-label="Breadcrumb"] ol li {
-  background: none !important;
-  border: none !important;
-  padding: 0 !important;
-  margin: 0 !important;
-}
-
-/* Breadcrumb separator */
-nav[aria-label="Breadcrumb"] ol li:not(:last-child)::after,
 nav[data-astro-cid-qaanghzh] ol[data-astro-cid-qaanghzh] li[data-astro-cid-qaanghzh]:not(:last-child)::after {
   content: "/";
   margin: 0 0.5em;
@@ -331,7 +307,6 @@ nav[data-astro-cid-qaanghzh] ol[data-astro-cid-qaanghzh] li[data-astro-cid-qaang
 }
 
 /* Breadcrumb links */
-nav[aria-label="Breadcrumb"] a,
 nav[data-astro-cid-qaanghzh] a {
   color: var(--aps-primary-600);
   font-weight: var(--aps-font-link);
@@ -339,14 +314,12 @@ nav[data-astro-cid-qaanghzh] a {
   transition: color 0.2s ease;
 }
 
-nav[aria-label="Breadcrumb"] a:hover,
 nav[data-astro-cid-qaanghzh] a:hover {
   color: var(--aps-primary-500);
   text-decoration: underline;
 }
 
 /* Current page (last breadcrumb, no link) */
-nav[aria-label="Breadcrumb"] li:last-child,
 nav[data-astro-cid-qaanghzh] li[data-astro-cid-qaanghzh]:last-child {
   color: var(--aps-neutral-600);
   font-weight: var(--aps-font-default);
@@ -389,11 +362,9 @@ main > p:first-of-type {
    8. LISTS - Conference Series, Years, Sessions
    ============================================================================ */
 
-/* Main content lists (conference series, years) - broader selector for actual HTML structure */
-main ul,
-main nav ul,
-main section ul,
-main section[aria-label] ul {
+/* Main content lists (conference series, years) */
+main > ul,
+main > section > ul {
   list-style: none;
   padding: 0;
   margin: var(--spacing-xl) 0;
@@ -403,275 +374,71 @@ main section[aria-label] ul {
 }
 
 @media (min-width: 768px) {
-  main ul,
-  main nav ul,
-  main section ul {
+  main > ul,
+  main > section > ul {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: var(--spacing-lg);
   }
 }
 
-/* Grid items - conference series links and year navigation */
-main nav[aria-label="Meeting series"] ul li,
-main section[aria-label="Conference Series"] ul li,
-main nav[aria-label$="meetings by year"] ul li,
-main section[aria-label="Available Years"] ul li {
+main > ul > li,
+main > section > ul > li {
   background-color: #ffffff;
   border: 1px solid var(--aps-neutral-200);
-  border-radius: 0.5rem;
+  border-radius: 0.25rem;
   transition: all 0.2s ease;
-  overflow: hidden;
 }
 
-main nav[aria-label="Meeting series"] ul li:hover,
-main section[aria-label="Conference Series"] ul li:hover,
-main nav[aria-label$="meetings by year"] ul li:hover,
-main section[aria-label="Available Years"] ul li:hover {
+main > ul > li:hover,
+main > section > ul > li:hover {
   border-color: var(--aps-primary-400);
-  box-shadow: 0 4px 12px rgba(0, 83, 139, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 83, 139, 0.1);
   transform: translateY(-2px);
 }
 
-main nav[aria-label="Meeting series"] ul li a,
-main section[aria-label="Conference Series"] ul li a,
-main nav[aria-label$="meetings by year"] ul li a,
-main section[aria-label="Available Years"] ul li a {
+main > ul > li > a,
+main > section > ul > li > a {
   display: block;
   padding: var(--spacing-lg);
   font-size: var(--aps-text-lg);
   font-weight: var(--aps-font-heading);
   color: var(--aps-primary-600);
   text-decoration: none;
-  transition: all 0.2s ease;
-  text-align: center;
+  transition: color 0.2s ease;
 }
 
-main nav[aria-label="Meeting series"] ul li a:hover,
-main section[aria-label="Conference Series"] ul li a:hover,
-main nav[aria-label$="meetings by year"] ul li a:hover,
-main section[aria-label="Available Years"] ul li a:hover {
-  color: #ffffff;
-  background-color: var(--aps-primary-600);
+main > ul > li > a:hover,
+main > section > ul > li > a:hover {
+  color: var(--aps-primary-500);
   text-decoration: none;
 }
 
 /* Section heading for conference series list */
-main > section > h2,
-main section[aria-label] > h2 {
-  font-size: var(--aps-text-2xl);
+main > section > h2 {
+  font-size: var(--aps-text-3xl);
   color: var(--aps-primary-600);
   margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--aps-primary-200);
-}
-
-/* ============================================================================
-   8a. DEFINITION LISTS - Conference Overview metadata
-   ============================================================================ */
-
-/* Conference Overview article - clean card style */
-main > section > article {
-  background-color: var(--aps-neutral-100);
-  border-radius: 0.5rem;
-  padding: var(--spacing-lg);
-  margin-top: var(--spacing-md);
-}
-
-/* Conference Overview definition list styling */
-main dl,
-main article dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--spacing-xs) var(--spacing-lg);
-  margin: 0 0 var(--spacing-md) 0;
-  padding: 0;
-}
-
-main dt,
-main article dt {
-  font-weight: var(--aps-font-bold);
-  color: var(--aps-primary-600);
-  grid-column: 1;
-  font-size: var(--aps-text-sm);
-}
-
-main dd,
-main article dd {
-  margin: 0;
-  color: var(--aps-neutral-700);
-  grid-column: 2;
-  font-size: var(--aps-text-sm);
-}
-
-/* Conference Overview description paragraph */
-main > section > article > p {
-  margin: var(--spacing-md) 0 0 0;
-  color: var(--aps-neutral-600);
-  font-size: var(--aps-text-sm);
-  line-height: 1.6;
-}
-
-/* ============================================================================
-   8b. SESSION TYPE BADGES
-   ============================================================================ */
-
-/* Style session type indicators (FOCUS, ORAL, INVITED, etc.) */
-main article p:first-of-type,
-main section article > div > p:last-child {
-  font-size: var(--aps-text-sm);
-  color: var(--aps-neutral-600);
-}
-
-/* Badge-style session types - target the paragraph after h3 in session cards */
-main section[aria-label="Events"] article > div > p:last-of-type {
-  display: inline-flex;
-  gap: var(--spacing-sm);
-  margin: var(--spacing-xs) 0;
-}
-
-/* Session type badges */
-main article p:has(+ time),
-.session-type-badge {
-  font-size: var(--aps-text-xs);
-  font-weight: var(--aps-font-bold);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
 /* ============================================================================
    9. SESSIONS PAGE - Session Cards
    ============================================================================ */
 
-/* Section containers (Conference Overview, Events) - lighter, cleaner look */
+/* Session containers on meeting year page */
 main > section {
-  background-color: transparent;
-  border: none;
-  border-radius: 0;
-  padding: 0;
-  margin-bottom: var(--spacing-2xl);
-  position: relative;
-}
-
-/* Section headings - clean underline style */
-main > section > h2:first-child {
-  font-size: var(--aps-text-xl);
-  color: var(--aps-primary-600);
-  margin: 0 0 var(--spacing-lg) 0;
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--aps-primary-400);
-}
-
-/* Events section - session card grid (target section with h2 "Events") */
-main > section:has(> h2:first-child) > ul {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
-  gap: var(--spacing-xl);
-  list-style: none;
-  padding: 0;
-  margin: var(--spacing-lg) 0 0 0;
-}
-
-/* Individual session cards - card container (li elements) */
-main > section:has(> h2:first-child) > ul > li {
   background-color: #ffffff;
-  border: 1px solid var(--aps-neutral-200) !important;
-  border-radius: 0.5rem;
-  overflow: hidden;
+  border: 1px solid var(--aps-neutral-200);
+  border-radius: 0.375rem;
+  padding: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
   transition: all 0.2s ease;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  position: relative;
+  /* Removed z-index to prevent stacking context conflicts with sticky header */
 }
 
-main > section:has(> h2:first-child) > ul > li:hover {
-  border-color: var(--aps-primary-400) !important;
-  box-shadow: 0 8px 24px rgba(0, 83, 139, 0.12);
-  transform: translateY(-2px);
-}
-
-/* Session card article - flexbox with title at top, metadata at bottom */
-main > section > ul > li > article {
-  display: flex !important;
-  flex-direction: column !important;
-  height: 100% !important;
-  padding: var(--spacing-lg) !important;
-  border: none !important;
-}
-
-/* Session card HEADER - REMOVE BOTTOM BORDER, flex-grow to push content down */
-main > section > ul > li > article > header {
-  flex: 1 1 auto !important;
-  padding: 0 !important;
-  margin: 0 0 var(--spacing-md) 0 !important;
-  border: none !important;
-  border-bottom: none !important;
-}
-
-/* Remove borders from all direct children of article */
-main > section > ul > li > article > * {
-  border: none !important;
-  border-top: none !important;
-  border-bottom: none !important;
-}
-
-/* Session title in header */
-main > section > ul > li > article > header h3 {
-  font-size: var(--aps-text-base) !important;
-  font-weight: var(--aps-font-heading) !important;
-  margin: 0 0 var(--spacing-sm) 0 !important;
-  line-height: 1.4 !important;
-}
-
-main > section > ul > li > article > header h3 a {
-  color: var(--aps-primary-600) !important;
-  text-decoration: none !important;
-}
-
-main > section > ul > li > article > header h3 a:hover {
-  color: var(--aps-primary-500) !important;
-  text-decoration: underline !important;
-}
-
-/* Session type badge in header (ORAL, INVITED, etc.) */
-main > section > ul > li > article > header > p {
-  display: inline-block !important;
-  font-size: 0.7rem !important;
-  font-weight: var(--aps-font-bold) !important;
-  color: var(--aps-neutral-500) !important;
-  background-color: var(--aps-neutral-100) !important;
-  padding: 0.2rem 0.5rem !important;
-  border-radius: 0.25rem !important;
-  margin: 0 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  border: none !important;
-}
-
-/* All paragraphs after the header - these stay at bottom */
-main > section > ul > li > article > p {
-  flex: 0 0 auto !important;
-  margin: 0.2rem 0 !important;
-  font-size: var(--aps-text-sm) !important;
-  color: var(--aps-neutral-600) !important;
-  line-height: 1.4 !important;
-}
-
-/* View details link - minimal styling */
-main > section > ul > li > article > a:last-child {
-  flex: 0 0 auto !important;
-  display: inline-block !important;
-  font-size: var(--aps-text-sm) !important;
-  font-weight: var(--aps-font-bold) !important;
-  color: var(--aps-primary-600) !important;
-  text-decoration: none !important;
-  margin-top: var(--spacing-sm) !important;
-  padding: 0 !important;
-  background: none !important;
-}
-
-main > section > ul > li > article > a:last-child:hover {
-  color: var(--aps-primary-500) !important;
-  text-decoration: underline !important;
+main > section:hover {
+  border-color: var(--aps-primary-300);
+  box-shadow: 0 4px 12px rgba(0, 83, 139, 0.08);
 }
 
 /* Session title (h3 with link) */
@@ -737,261 +504,17 @@ main > section > p > span:nth-child(4)::before {
    10. SESSION DETAIL PAGE - Metadata & Presentations
    ============================================================================ */
 
-/* Session detail article container */
-main > article {
-  background-color: #ffffff;
-}
-
-/* Session header area */
-main > article > div:first-child {
-  margin-bottom: var(--spacing-xl);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--aps-primary-400);
-}
-
-/* Session title on detail page */
-main > article h1 {
-  font-size: var(--aps-text-3xl);
-  color: var(--aps-primary-600);
-  margin-bottom: var(--spacing-sm);
-}
-
-/* Session ID/type badge on detail pages */
-main > article > div:first-child > p,
+/* Session ID paragraph right after h1 */
 main > h1 + p {
-  font-size: 0.7rem;
-  color: var(--aps-neutral-500);
-  font-weight: var(--aps-font-bold);
-  margin-top: var(--spacing-xs);
-  margin-bottom: 0;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--aps-neutral-100);
-  border-radius: 0.25rem;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Abstract page - type badge directly after h1 */
-main > article > div:first-child + p {
-  font-size: 0.7rem;
-  color: var(--aps-neutral-500);
-  font-weight: var(--aps-font-bold);
-  margin: var(--spacing-xs) 0 var(--spacing-md) 0;
-  padding: 0.25rem 0.5rem;
-  background-color: var(--aps-neutral-100);
-  border-radius: 0.25rem;
-  display: inline-block;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Complementary sections (Schedule, Presiders, Locations) - cleaner inline style */
-main > article > aside,
-main > article > [role="complementary"] {
-  background-color: transparent;
-  border-left: none;
-  padding: 0;
-  margin: var(--spacing-md) 0;
-  border-radius: 0;
-}
-
-main > article > aside h2,
-main > article > [role="complementary"] h2 {
   font-size: var(--aps-text-sm);
-  font-weight: var(--aps-font-bold);
-  color: var(--aps-primary-600);
-  margin: 0 0 var(--spacing-sm) 0;
-  padding: 0;
-  border-bottom: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* Lists inside complementary sections */
-main > article > aside ul,
-main > article > [role="complementary"] ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: block !important;
-  grid-template-columns: unset !important;
-}
-
-main > article > aside ul li,
-main > article > [role="complementary"] ul li {
-  padding: 0;
-  border-bottom: none;
-  background: none !important;
-  border-radius: 0 !important;
-  font-size: var(--aps-text-sm);
-  color: var(--aps-neutral-700);
-}
-
-main > article > aside ul li:last-child,
-main > article > [role="complementary"] ul li:last-child {
-  border-bottom: none;
-}
-
-/* Presider name styling */
-main > article > [role="complementary"] ul li p {
-  margin: 0;
-  line-height: 1.5;
-}
-
-main > article > [role="complementary"] ul li strong {
-  color: var(--aps-neutral-500);
+  color: var(--aps-neutral-600);
   font-weight: var(--aps-font-link);
-  font-size: var(--aps-text-xs);
-}
-
-/* Horizontal rule separator - hide excessive rules on session detail pages */
-main > article > hr {
-  display: none;
-}
-
-/* Main page title separator - keep this one but make it subtle */
-main > h1 + hr,
-main > article > div:first-child + hr {
-  display: block;
-  border: none;
-  border-top: 1px solid var(--aps-neutral-200);
-  margin: var(--spacing-md) 0 var(--spacing-lg) 0;
-}
-
-/* Presentations section */
-main > article > section[aria-label="Presentations"],
-main section[aria-label="Presentations"] {
-  background-color: #ffffff;
-  border: none;
-  border-left: none;
-  padding: 0;
-  margin-top: var(--spacing-2xl);
-}
-
-main section[aria-label="Presentations"] > h2 {
-  font-size: var(--aps-text-2xl);
-  color: var(--aps-primary-600);
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-sm);
-  border-bottom: 2px solid var(--aps-primary-400);
-}
-
-/* Presentations list */
-main section[aria-label="Presentations"] > ul {
-  display: flex !important;
-  flex-direction: column;
-  gap: var(--spacing-lg);
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  grid-template-columns: unset !important;
-}
-
-/* Individual presentation card */
-main section[aria-label="Presentations"] > ul > li {
-  background-color: #ffffff;
-  border: 1px solid var(--aps-neutral-200);
-  border-radius: 0.5rem;
-  padding: 0;
-  overflow: hidden;
-  transition: all 0.2s ease;
-}
-
-main section[aria-label="Presentations"] > ul > li:hover {
-  border-color: var(--aps-primary-400);
-  box-shadow: 0 4px 12px rgba(0, 83, 139, 0.1);
-}
-
-/* Presentation article */
-main section[aria-label="Presentations"] article {
-  padding: var(--spacing-lg);
-}
-
-/* Presentation title */
-main section[aria-label="Presentations"] article h3 {
-  font-size: var(--aps-text-lg);
-  margin: 0 0 var(--spacing-xs) 0;
-}
-
-main section[aria-label="Presentations"] article h3 a {
-  color: var(--aps-primary-600);
-  text-decoration: none;
-}
-
-main section[aria-label="Presentations"] article h3 a:hover {
-  color: var(--aps-primary-500);
-  text-decoration: underline;
-}
-
-/* Presentation type badge */
-main section[aria-label="Presentations"] article > div:first-child > p {
-  display: inline-block;
-  font-size: var(--aps-text-xs);
-  font-weight: var(--aps-font-bold);
-  color: var(--aps-neutral-600);
+  margin-top: -0.5rem;
+  margin-bottom: var(--spacing-xl);
+  padding: var(--spacing-sm) var(--spacing-md);
   background-color: var(--aps-neutral-100);
-  padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
-  margin: 0;
-  text-transform: uppercase;
-}
-
-/* Presentation time */
-main section[aria-label="Presentations"] article > p:has(time) {
-  font-size: var(--aps-text-sm);
-  color: var(--aps-neutral-600);
-  margin: var(--spacing-sm) 0;
-}
-
-/* Presenters and Authors sections */
-main section[aria-label="Presentations"] article > div:has(h4) {
-  margin-top: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 1px solid var(--aps-neutral-100);
-}
-
-main section[aria-label="Presentations"] article h4 {
-  font-size: var(--aps-text-sm);
-  font-weight: var(--aps-font-bold);
-  color: var(--aps-primary-600);
-  margin: 0 0 var(--spacing-sm) 0;
-}
-
-main section[aria-label="Presentations"] article > div:has(h4) ul {
-  display: block !important;
-  grid-template-columns: unset !important;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-main section[aria-label="Presentations"] article > div:has(h4) ul li {
-  font-size: var(--aps-text-sm);
-  padding: var(--spacing-xs) 0;
-  background: none !important;
-  border: none !important;
-}
-
-main section[aria-label="Presentations"] article > div:has(h4) ul li p:first-child {
-  font-weight: var(--aps-font-link);
-  color: var(--aps-neutral-900);
-  margin: 0;
-}
-
-main section[aria-label="Presentations"] article > div:has(h4) ul li p:last-child {
-  font-style: italic;
-  color: var(--aps-neutral-600);
-  margin: 0;
-}
-
-/* View abstract link */
-main section[aria-label="Presentations"] article > p:last-child a {
-  display: inline-flex;
-  align-items: center;
-  font-size: var(--aps-text-sm);
-  font-weight: var(--aps-font-bold);
-  color: var(--aps-primary-600);
+  display: inline-block;
 }
 
 /* Metadata sections (Schedule, Presider, Location, Sponsoring Units) */
@@ -1042,189 +565,26 @@ main > section > p > strong {
    11. ABSTRACT/PRESENTATION PAGE
    ============================================================================ */
 
-/* Abstract page header */
-main > article > header {
-  margin-bottom: var(--spacing-lg);
-  padding-bottom: var(--spacing-lg);
-  border-bottom: 2px solid var(--aps-primary-400);
-}
-
-/* Abstract page title */
-main > article > header > h1 {
-  font-size: var(--aps-text-3xl);
-  color: var(--aps-primary-600);
-  margin: 0 0 var(--spacing-sm) 0;
-}
-
-/* Session type badge (ORAL, INVITED, etc.) on abstract page */
-main > article > header > p {
-  margin: var(--spacing-sm) 0 var(--spacing-lg) 0;
-}
-
-main > article > header > p > data,
-main > article > header > p:first-of-type {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: var(--aps-font-bold);
-  color: var(--aps-neutral-500);
+/* Abstract content section */
+main > section:has(> h2:first-child) {
   background-color: var(--aps-neutral-100);
-  padding: 0.25rem 0.5rem;
+  border-left: 4px solid var(--aps-primary-600);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-xl) 0;
   border-radius: 0.25rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 
-/* Abstract section inside header */
-main > article > header > section {
-  margin-top: var(--spacing-lg);
-}
-
-main > article > header > section > h2 {
+/* Abstract heading */
+main > section > h2:first-of-type {
+  color: var(--aps-primary-600);
   font-size: var(--aps-text-xl);
-  color: var(--aps-neutral-900);
-  margin: 0 0 var(--spacing-sm) 0;
 }
 
-/* Abstract text content box */
-main > article > header > section > div {
+/* Abstract text */
+main > section:has(> h2) > p {
   font-size: var(--aps-text-base);
   line-height: 1.7;
-  color: var(--aps-neutral-700);
-  padding: var(--spacing-md);
-  background-color: var(--aps-neutral-100);
-  border-radius: 0.375rem;
-  border-left: 3px solid var(--aps-primary-400);
-}
-
-/* Time on abstract page */
-main > article > p:has(time) {
-  font-size: var(--aps-text-sm);
-  color: var(--aps-neutral-600);
-  margin: var(--spacing-md) 0;
-}
-
-/* Authors section on abstract page */
-main > article > section {
-  margin-top: var(--spacing-xl);
-}
-
-main > article > section > h2 {
-  color: var(--aps-primary-600);
-  font-size: var(--aps-text-base);
-  font-weight: var(--aps-font-bold);
-  margin: 0 0 var(--spacing-sm) 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-/* Author list styling */
-main > article > section > ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: block !important;
-  grid-template-columns: unset !important;
-}
-
-main > article > section > ul > li {
-  background: none !important;
-  border: none !important;
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--aps-neutral-200);
-}
-
-main > article > section > ul > li:last-child {
-  border-bottom: none;
-}
-
-/* Author address styling */
-main > article > section > ul > li address {
-  font-style: normal;
-}
-
-main > article > section > ul > li address p {
-  margin: 0;
-  line-height: 1.4;
-}
-
-main > article > section > ul > li address p:first-child {
-  font-weight: var(--aps-font-link);
   color: var(--aps-neutral-900);
-}
-
-main > article > section > ul > li address p:last-child {
-  font-size: var(--aps-text-sm);
-  color: var(--aps-neutral-500);
-  font-style: italic;
-}
-
-/* Legacy selectors for div-based structure */
-main > article > div:has(> h2) {
-  margin: var(--spacing-lg) 0;
-}
-
-main > article > div > h2 {
-  color: var(--aps-neutral-900);
-  font-size: var(--aps-text-lg);
-  margin: 0 0 var(--spacing-sm) 0;
-}
-
-main > article > div > div {
-  font-size: var(--aps-text-base);
-  line-height: 1.7;
-  color: var(--aps-neutral-700);
-  padding: var(--spacing-md);
-  background-color: var(--aps-neutral-100);
-  border-radius: 0.375rem;
-  border-left: 3px solid var(--aps-primary-400);
-}
-
-main > article > div:has(> h2):last-of-type {
-  margin-top: var(--spacing-xl);
-}
-
-main > article > div:has(> h2):last-of-type > h2 {
-  color: var(--aps-primary-600);
-  font-size: var(--aps-text-base);
-  font-weight: var(--aps-font-bold);
-  margin: 0 0 var(--spacing-sm) 0;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-}
-
-main > article > div:has(> h2) > ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: block !important;
-  grid-template-columns: unset !important;
-}
-
-main > article > div:has(> h2) > ul > li {
-  background: none !important;
-  border: none !important;
-  padding: var(--spacing-sm) 0;
-  border-bottom: 1px solid var(--aps-neutral-200);
-}
-
-main > article > div:has(> h2) > ul > li:last-child {
-  border-bottom: none;
-}
-
-main > article > div:has(> h2) > ul > li p {
-  margin: 0;
-  line-height: 1.4;
-}
-
-main > article > div:has(> h2) > ul > li p:first-child {
-  font-weight: var(--aps-font-link);
-  color: var(--aps-neutral-900);
-}
-
-main > article > div:has(> h2) > ul > li p:last-child {
-  font-size: var(--aps-text-sm);
-  color: var(--aps-neutral-500);
-  font-style: italic;
 }
 
 /* Author list */
